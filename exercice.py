@@ -40,6 +40,8 @@ def prime_integer_summation() -> int:
         for divider in range(2, int(math.sqrt(i)) + 1) : # plus efficace que int(i/2) + 1 OU i-1
             if i % divider == 0 :
                 is_prime = False
+                break
+
         if is_prime :
             primes.append(i)
 
@@ -53,7 +55,12 @@ def factorial(number: int) -> int:
 
 
 def use_continue() -> None:
-    pass
+
+    for i in range(1, 11) :
+        if i == 5 :
+            continue
+        else :
+            print(i)
 
 
 def main() -> None:
