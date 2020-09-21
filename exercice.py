@@ -3,7 +3,7 @@
 
 
 from typing import List
-
+import math
 
 def convert_to_absolute() -> float:
     nombre = float(input('Veuillez entrer un nombre quelconque : '))
@@ -12,13 +12,40 @@ def convert_to_absolute() -> float:
 
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
+    prefixes, suffixes = 'JKLMNOPQ', 'ack'
 
-    return [""]
+    result = []
+    #for i in range(len(prefixes)): # METHODE 1
+    #    noms = prefixes[i] + suffixes
+    #    result.append(noms)
+
+    # return result (manque 1 bout)
+    #return [letter + suffixes in
+
+    for letter in prefixes:
+        result.append(letter + suffixes)
+
+    return result
 
 
 def prime_integer_summation() -> int:
-    return 0
+    # initialiser liste
+    primes = []
+    i = 2
+    x = 0
+
+    while len(primes) < 100 :
+        is_prime = True
+
+        for divider in range(2, int(math.sqrt(i)) + 1) : # plus efficace que int(i/2) + 1 OU i-1
+            if i % divider == 0 :
+                is_prime = False
+        if is_prime :
+            primes.append(i)
+
+        i += 1
+
+    return sum(primes)
 
 
 def factorial(number: int) -> int:
