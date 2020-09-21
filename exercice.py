@@ -3,10 +3,12 @@
 
 
 from typing import List
-import math
+
 
 def convert_to_absolute() -> float:
-    return 0.0
+    nombre = float(input('Veuillez entrer un nombre quelconque : '))
+    return abs(nombre)
+    # ou return abs(float(input('Veuillez entrer un nombre quelconque : ')))
 
 
 def use_prefixes() -> List[str]:
